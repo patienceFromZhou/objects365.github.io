@@ -60,7 +60,6 @@ function creatCategoryButton(mainCategory) {
     }
     $("#SubCategoryButtonPanel").append(div);
 }
-'show me a bug'
 function addAImg(imgId, url, boxes) {
     var div = '';
     //div = '<a>'+url+'</a><div class="col-lg-12" id="imageDisplay' + imgId + '"><canvas class="canvas" style="margin:10px"></canvas></div>';
@@ -72,15 +71,6 @@ function addAImg(imgId, url, boxes) {
     var img = new Image;
     img.src = url;
     img.onload = function () {
-
-        if (img.width>1024){
-        img.width = 1024;
-        img.height = img.height *(1024./img.width);}
-    if (img.height>1024){
-        img.height = 1024;
-        img.width = img.width *(1024./img.height);}
-
-        
         canvas.width = this.width ;
         canvas.height = this.height ;
         renderImage(ctx, this);
