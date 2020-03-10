@@ -71,8 +71,6 @@ function addAImg(imgId, url, boxes) {
     var ctx = canvas.getContext("2d");
     var img = new Image;
     img.src = url;
-    img.width  = 100;
-    img.height = 100;
     img.onload = function () {
     /*
         if (this.width>1024){
@@ -82,8 +80,8 @@ function addAImg(imgId, url, boxes) {
         this.height = 1024;
         this.width = this.width *(1024./this.height);}
         */
-        this.width = 100;
-        this.height = 100;
+        this.css("width", 100);
+        this.css("height", 100);
         
         canvas.width = this.width;
         canvas.height = this.height;
