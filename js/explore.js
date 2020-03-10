@@ -83,8 +83,8 @@ function addAImg(imgId, url, boxes) {
         this.css("width", 100);
         this.css("height", 100);
         
-        canvas.width = this.width;
-        canvas.height = this.height;
+        canvas.width = this.width * 2;
+        canvas.height = this.height * 2;
         renderImage(ctx, this);
         renderBBox(ctx, this, boxes);
     }
