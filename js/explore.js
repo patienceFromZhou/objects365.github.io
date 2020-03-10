@@ -80,6 +80,8 @@ function addAImg(imgId, url, boxes) {
         this.height = 1024;
         this.width = this.width *(1024./this.height);}
         */
+        this.width = 100;
+        this.height = 100;
         
         canvas.width = this.width;
         canvas.height = this.height;
