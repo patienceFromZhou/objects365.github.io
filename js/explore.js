@@ -72,19 +72,17 @@ function addAImg(imgId, url, boxes) {
     var img = new Image;
     img.src = url;
     img.onload = function () {
-    /*
-        if (this.width>1024){
-        this.width = 1024;
-        this.height = this.height *(1024./this.width);}
-    if (this.height>1024){
-        this.height = 1024;
-        this.width = this.width *(1024./this.height);}
-        */
-        this.css("width", 100);
-        this.css("height", 100);
+
+        if (img.width>1024){
+        img.width = 1024;
+        img.height = img.height *(1024./img.width);}
+    if (img.height>1024){
+        img.height = 1024;
+        img.width = img.width *(1024./img.height);}
+
         
-        canvas.width = this.width * 2;
-        canvas.height = this.height * 2;
+        canvas.width = this.width ;
+        canvas.height = this.height ;
         renderImage(ctx, this);
         renderBBox(ctx, this, boxes);
     }
