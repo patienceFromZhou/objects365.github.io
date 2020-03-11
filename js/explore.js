@@ -154,7 +154,7 @@ function renderBBox(ctx, img, data) {
 
         ctx.font = "20px Arial";
         ctx.fillStyle = color;
-        ctx.fillText(data[i].category, bbox[0], bbox[1] - 5);
+        ctx.fillText(data[i].category, x, y-5);
 
     }
     ctx.stroke();
