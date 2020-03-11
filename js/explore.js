@@ -83,7 +83,6 @@ function addAImg(imgId, url, boxes) {
 	    	this.width = this.width * this.ratio;
 	        this.height = reference_lenth;
 	        }
-	this.src = img.src;
         canvas.width = this.width ;
         canvas.height = this.height ;
         renderImage(ctx, this);
@@ -156,8 +155,7 @@ function renderBBox(ctx, img, data) {
 
         ctx.font = "20px Arial";
         ctx.fillStyle = color;
-        //ctx.fillText(data[i].category, x, y-5);
-	ctx.fillText(img.src, x, y-5);
+        ctx.fillText(data[i].category, x, y-5);
     }
     ctx.stroke();
 }
