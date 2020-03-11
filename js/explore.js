@@ -71,6 +71,17 @@ function addAImg(imgId, url, boxes) {
     var img = new Image;
     img.src = url;
     img.onload = function () {
+        reference_lenth = 1024.0;
+	    if (this.width >=this.height){
+	    	this.ratio = reference_lenth/this.width
+	    	this.height = this.height * this.ratio;
+	        this.width = reference_lenth;
+	        }
+	    else {
+	    	this.ratio = reference_lenth/this.height
+	    	this.width = this.width * this.ratio;
+	        this.height = reference_lenth;
+	        }
         canvas.width = this.width ;
         canvas.height = this.height ;
         renderImage(ctx, this);
@@ -133,8 +144,12 @@ function renderBBox(ctx, img, data) {
         bbox = data[i].rect;
         ctx.lineWidth = 2;
         ctx.strokeStyle = color;
-        // ctx.rect(bbox[0], bbox[1], bbox[2], bbox[3]);
-        ctx.strokeRect(bbox[0], bbox[1], bbox[2] - bbox[0], bbox[3] - bbox[1]);
+        x = Math.round(img.ratio*bbox[0]);
+        y = Math.round(img.ratio*bbox[1]);
+        w = Math.round(img.ratio*(bbox[2]-bbox[0]));
+        h = Math.round(img.ratio*(bbox[3]-bbox[1]));
+        ctx.strokeRect(x, y, w, h);
+
         // ctx.stroke();
 
         ctx.font = "20px Arial";
