@@ -129,7 +129,7 @@ function showImg(cid){
 
 function renderImage(ctx, img) {
     ctx.clearRect(0, 0, img.width, img.height);
-    ctx.drawImage(img, 0, 0);
+    ctx.drawImage(img,0,0,img.width,img.height);
 }
 
 function renderBBox(ctx, img, data) {
